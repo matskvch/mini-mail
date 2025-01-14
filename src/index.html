@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>mini-mail</title>
+        <title>mini-mail</title>
+        <link rel="stylesheet" href="styles/main.css">
     </head>
 
     <body>
-        <h1>hey :) welcome to mini-mail</h1>
+        <div class="mini-mail">
+            <!--sidebar-->
+            <div class="sidebar">
+                <button class="compose-btn">Compose email</button>
+                <div class="email-list">
+                    <!--here is going to be emails-->
+                        <div class="email-item">
+                            <div class="email-sender">John Doe</div>
+                            <div class="email-subject">Привет! Как дела?</div>
+                            <div class="email-preview">Давно не виделись, как у тебя дела?...</div>
+                        </div>
+                        
+                        <div class="email-item">
+                            <div class="email-sender">Alice Smith</div>
+                            <div class="email-subject">Встреча в четверг</div>
+                            <div class="email-preview">Подтверждаю нашу встречу в четверг...</div>
+                        </div>
+                </div>
+            </div>
+
+            <!--main content-->
+            <div class="main-content">
+                <div class="email-view">
+                    <h1>hey :) welcome to mini-mail</h1>
+                    <h2>Here are your emails:</h2>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

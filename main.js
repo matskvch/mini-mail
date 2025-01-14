@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-const path = require('path') // modules import
+const path = require('path')
 
 async function createWindow() {
     const window = new BrowserWindow({
@@ -7,16 +7,16 @@ async function createWindow() {
         height: 600,
         webPreferences: {
             nodeIntegration: true, // adding node.js
-            preload: path.join(__dirname, 'preload.js') // connecting preload script
+            preload: path.join(__dirname, 'preload.js') // connecting preload script + note 2
         }
     })
     window.loadFile('src/index.html')
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow) // note 3
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
+    if (process.platform !== 'darwin') { // note 4
         app.quit()
     }
 })
