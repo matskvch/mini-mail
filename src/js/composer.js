@@ -36,5 +36,35 @@ composerForm.addEventListener("submit", (event) => {
         body: emailBody,
     };
 
-    console.log(newEmailData)
+    //console.log(newEmailData)
+
+    addEmailToSent(newEmailData)
+
+    composerForm.reset()
+    composerWindow.style.display = 'none'
 });
+
+function addEmailToSent(newEmailData) {
+    const sentList = document.querySelector('#sent-list')
+
+    // email item creation:
+    const emailItem = document.createElement('div')
+    emailItem.className = 'email-item'
+
+    const nowDate = new Date()
+    const timeStr = now.toLocaleTimeString()
+    const dateStr = now.toLocaleDateString()
+
+    emailItem.innerHTML = `
+        <div class="email-sender">To: ${newEmailData.to}</div>
+        <div class="email-subject">${newEmailData.subject}</div>
+        <div class="email-preview">${newEmailData.body.substring(0, 35)}...</div>
+        <div class="email-date">${dateStr}, ${timeStr}</div>
+    `
+    
+    if (sentList.firstChild) {
+        sentList.insertBefore(emailItem, sentList.firstChild)
+    } else {
+        sentList.appendChild(emailItem)
+    }
+}

@@ -169,3 +169,9 @@ h2 {
 .send-btn:hover {
     background-color: #1557b0;
 }
+
+.email-date {
+    color: #5f6368;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
